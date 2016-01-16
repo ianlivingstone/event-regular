@@ -1,6 +1,6 @@
 {
   "name": "event-regulator",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "commonjs module for managing event subscriptions",
   "main": "index.js",
   "scripts": {
