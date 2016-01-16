@@ -5,7 +5,21 @@ var assert = require('assert');
 var EventEmitter = require('events').EventEmitter;
 var sinon = require('sinon');
 
-var EventRegulator = require('./index');
+var EventRegulator = require('./index').EventRegulator;
+var subscribe = require('./index').subscribe;
+
+describe('subscribe', function() {
+  it('returns a regulator', function() {
+    var emitter = new EventEmitter();
+    var subscriptions = [
+      [emitter, 'hello', function () {}]
+    ];
+
+    var returned = subscribe(subscriptions);
+    assert.ok(returned instanceof EventRegulator);
+    assert.strictEqual(returned.subscriptions.length, subscriptions.length);
+  });
+});
 
 describe('EventRegulator', function() {
  

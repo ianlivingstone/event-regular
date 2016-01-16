@@ -40,4 +40,9 @@ EventRegulator.prototype.destroy = function () {
   this.subscriptions = [];
 };
 
-module.exports = EventRegulator;
+function subscribe (subscriptions) {
+  return new EventRegulator(subscriptions);
+}
+
+exports.EventRegulator = EventRegulator;
+exports.subscribe = subscribe;
